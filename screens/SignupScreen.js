@@ -12,17 +12,13 @@ import FormButton from '../components/FormButton';
 
 import SocialButton from '../components/SocialButton';
 
-const LoginScreen = ({navigation}) => {
+const SignupScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
   return (
     <View style={styles.container}>
-      <Image
-        source={require('../assets/cucumber-sandwich.jpg')}
-        style={styles.logo}
-      />
-      <Text style={styles.text}>EatTime</Text>
+      <Text style={styles.text}>Create an Account</Text>
 
       <FormInput
         labelValue={email}
@@ -74,7 +70,7 @@ const LoginScreen = ({navigation}) => {
   );
 };
 
-export default LoginScreen;
+export default SignupScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -84,20 +80,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
   },
-  logo: {
-    height: 150,
-    width: 150,
-    resizeMode: 'cover',
-  },
   text: {
     fontSize: 28,
     fontFamily: 'Helvetica Neue',
     color: '#051d5f',
     marginBottom: 10,
   },
-  forgotButton: {
-    marginVertical: 35,
-  },
+
   navButton: {
     marginTop: 15,
   },
@@ -106,5 +95,16 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: '#2e64e5',
     fontFamily: 'Helvetica Neue',
+  },
+  textPrivate: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginVertical: 35,
+    justifyContent: 'center',
+  },
+  color_textPrivate: {
+    fontsize: 13,
+    fontWeight: '400',
+    color: 'grey',
   },
 });
