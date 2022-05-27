@@ -7,6 +7,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
+
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 
@@ -65,7 +69,7 @@ const LoginScreen = ({navigation}) => {
 
       <TouchableOpacity
         style={styles.forgotButton}
-        onPress={() => navigation.navigate('Signup')}>
+        onPress={navigation.navigate('Signup')}>
         <Text style={styles.navButtonText}>
           Don't have an account? Create here
         </Text>

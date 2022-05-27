@@ -40,9 +40,20 @@ const SignupScreen = ({navigation}) => {
 
       <FormButton buttonTitle="Sign In" onPress={() => alert('Sign In')} />
 
-      <TouchableOpacity style={styles.forgotButton}>
-        <Text style={styles.navButtonText}>Forgot Password?</Text>
-      </TouchableOpacity>
+      <View style={styles.textPrivate}>
+        <Text style={styles.color_textPrivate}>
+          By registering, you confirm that you accept our
+        </Text>
+        <TouchableOpacity>
+          <Text style={[styles.color_textPrivate, {color: '#e88832'}]}>
+            Terms of service
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.color_textPrivate}> and </Text>
+        <Text style={[styles.color_textPrivate, {color: '#e88832'}]}>
+          Privacy Policy
+        </Text>
+      </View>
 
       <SocialButton
         buttonTitle="Sign In with Facebook"
@@ -103,7 +114,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   color_textPrivate: {
-    fontsize: 13,
+    fontSize: 13,
     fontWeight: '400',
     color: 'grey',
   },

@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import LoginScreen from './screens/LoginScreen';
 import OnboardingScreen from './screens/OnboardingScreen';
@@ -30,18 +31,69 @@ const App = () => {
   } else if (isFirstLaunch === true) {
     return (
       <NavigationContainer>
-        <AppStack.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}>
+        <AppStack.Navigator>
           <AppStack.Screen name="Onboarding" component={OnboardingScreen} />
           <AppStack.Screen name="Login" component={LoginScreen} />
-          <AppStack.Screen name="Signup" component={SignupScreen} />
+          <AppStack.Screen
+            name="Signup"
+            component={SignupScreen}
+            options={({navigation}) => ({
+              title: '',
+              headerStyle: {
+                backgroundColor: '#f9fafd',
+                shadowColor: '#f9fafd',
+                elevation: 0,
+              },
+              headerLeft: () => (
+                <View style={{marginLeft: 10}}>
+                  <FontAwesome.Button
+                    name="long-arrow-left"
+                    size={25}
+                    backgroundColor="#f9fafd"
+                    color="#333"
+                    onPress={() => navigation.goBack()}
+                  />
+                </View>
+              ),
+            })}
+          />
         </AppStack.Navigator>
       </NavigationContainer>
     );
   } else {
-    return <LoginScreen />;
+    return (
+      <NavigationContainer>
+        <AppStack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}>
+          <AppStack.Screen name="Login" component={LoginScreen} />
+          <AppStack.Screen
+            name="Signup"
+            component={SignupScreen}
+            options={({navigation}) => ({
+              title: '',
+              headerStyle: {
+                backgroundColor: '#f9fafd',
+                shadowColor: '#f9fafd',
+                elevation: 0,
+              },
+              headerLeft: () => (
+                <View style={{marginLeft: 10}}>
+                  <FontAwesome.Button
+                    name="long-arrow-left"
+                    size={25}
+                    backgroundColor="#f9fafd"
+                    color="#333"
+                    onPress={() => navigation.goBack()}
+                  />
+                </View>
+              ),
+            })}
+          />
+        </AppStack.Navigator>
+      </NavigationContainer>
+    );
   }
 };
 
