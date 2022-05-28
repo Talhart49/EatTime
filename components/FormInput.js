@@ -7,9 +7,9 @@ import {windowHeight, windowWidth} from '../Utils/Dimensions';
 const FormInput = ({labelValue, placeholderText, iconType, ...rest}) => {
   return (
     <View style={styles.inputContainer}>
-      <View style={styles.iconStyle}>
+      {/* <View style={styles.iconStyle}>
         <AntDesign name={iconType} size={25} color="#666" />
-      </View>
+      </View> */}
       <TextInput
         style={styles.input}
         value={labelValue}
@@ -30,27 +30,28 @@ const styles = StyleSheet.create({
     width: '100%',
     height: windowHeight / 15,
     backgroundColor: '#ccc',
-    borderRadius: 3,
+    borderRadius: 50,
     borderWidth: 1,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#fff',
   },
-  iconStyle: {
-    padding: 10,
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRightColor: '#ccc',
-    borderRightWidth: 1,
-    width: 50,
-  },
+  // iconStyle: {
+  //   padding: 10,
+  //   height: '100%',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   borderRightColor: '#ccc',
+  //   borderRightWidth: 1,
+  //   width: 50,
+  // },
   input: {
     padding: 10,
-    marginTop: 5,
+    marginTop: 9,
     marginBottom: 10,
     width: windowWidth / 1.5,
     height: windowHeight / 15,
     fontSize: 16,
+    marginLeft: 9,
   },
 });

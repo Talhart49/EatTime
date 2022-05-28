@@ -14,7 +14,7 @@ const SocialButton = ({
   let fontColor = color;
   return (
     <TouchableOpacity
-      style={[styles.buttonContainer, {backgroundColor: bgColor}]}
+      style={styles.buttonContainer}
       {...rest}
       onPress={() => alert(`${buttonTitle}`)}>
       <View style={styles.iconWrapper}>
@@ -39,11 +39,10 @@ export default SocialButton;
 const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 10,
-    width: '100%',
+    width: '65%',
     height: windowHeight / 15,
-    backgroundColor: '2e64e5',
     padding: 10,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
     borderRadius: 3,
     flexDirection: 'row',
