@@ -55,3 +55,20 @@ const styles = StyleSheet.create({
     marginLeft: 9,
   },
 });
+
+
+// import AntDesign from 'react-native-vector-icons/AntDesign';
+
+// <View style={styles.iconStyle}>
+//         <AntDesign name={iconType} size={25} color="#666" />
+//       </View> 
+
+//   iconStyle: {
+//     padding: 10,
+//     height: '100%',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     borderRightColor: '#ccc',
+//     borderRightWidth: 1,
+//     width: 50,
+//   },
