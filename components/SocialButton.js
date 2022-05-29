@@ -13,10 +13,7 @@ const SocialButton = ({
   let bgColor = backgroundColor;
   let fontColor = color;
   return (
-    <TouchableOpacity
-      style={styles.buttonContainer}
-      {...rest}
-      onPress={() => alert(`${buttonTitle}`)}>
+    <TouchableOpacity style={styles.buttonContainer} {...rest}>
       <View style={styles.iconWrapper}>
         <FontAwesome
           name={btnType}

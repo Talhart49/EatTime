@@ -9,6 +9,8 @@ import LoginScreen from '../screens/LoginScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import SignupScreen from '../screens/SignupScreen';
 
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
+
 const Stack = createStackNavigator();
 
 const AuthStack = () => {
@@ -22,6 +24,12 @@ const AuthStack = () => {
       } else {
         setIsFirstLaunch(false);
       }
+    });
+
+    GoogleSignin.configure({
+      offlineAccess: true,
+      webClientId:
+        '236246003391-ssibfjadkm51eglve7m9kffsg3g76bj0.apps.googleusercontent.com',
     });
   }, []);
 

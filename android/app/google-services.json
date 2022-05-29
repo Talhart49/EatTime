@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "236246003391-9mq6970pcl8e5oqi5n3ebsqdn4d9e6pd.apps.googleusercontent.com",
+          "client_id": "236246003391-7cjlu29jtbfkglmjqrkjail61t89alec.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.eattime",
-            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+            "certificate_hash": "8026d04d8e54807ce6f30286743d8205a6239925"
           }
         },
         {
