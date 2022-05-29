@@ -73,20 +73,21 @@ const SignupScreen = ({navigation}) => {
         </Text>
       </View> */}
 
-        <SocialButton
+        {/* <SocialButton
           buttonTitle="Sign Up with Facebook"
           onPress={() => alert('Sign Up with Facebook')}
           btnType="facebook"
           color="#4867aa"
           backgroundColor="#e6eaf4"
-        />
-
-        {/* <SocialButton
-        buttonTitle="Sign Up with Google"
-        btnType="google"
-        color="#de4d41"
-        backgroundColor="#f5e7ea"
-      /> */}
+        /> */}
+        {Platform.OS === 'android' ? (
+          <SocialButton
+            buttonTitle="Sign Up with Google"
+            btnType="google"
+            color="#de4d41"
+            backgroundColor="#f5e7ea"
+          />
+        ) : null}
       </View>
       <TouchableOpacity
         style={styles.bottomButton}
