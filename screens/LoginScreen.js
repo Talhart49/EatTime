@@ -6,7 +6,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -17,9 +17,13 @@ import FormButton from '../components/FormButton';
 import SocialButton from '../components/SocialButton';
 import {windowHeight} from '../Utils/Dimensions';
 
+import {AuthContext} from '../navigation/AuthProvider';
+
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
+  const {login} = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
@@ -43,7 +47,10 @@ const LoginScreen = ({navigation}) => {
           secureTextEntry={true}
         />
 
-        <FormButton buttonTitle="Sign In" onPress={() => alert('Sign In')} />
+        <FormButton
+          buttonTitle="Sign In"
+          onPress={() => login(email, password)}
+        />
 
         {/* <TouchableOpacity style={styles.forgotButton}>
         <Text style={styles.navButtonText}>Forgot Password?</Text>

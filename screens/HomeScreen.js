@@ -1,14 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {StyleSheet, Text, View, Button} from 'react-native';
+import React, {useContext} from 'react';
+import {AuthContext} from '../navigation/AuthProvider';
 
 const HomeScreen = () => {
+  const {user, logout} = useContext(AuthContext);
   return (
     <View>
-      <Text>HomeScreen</Text>
+      <Text>Welcome {user.email}</Text>
+      <Button onPress={() => logout()} title="Logout" />
     </View>
-  )
-}
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
