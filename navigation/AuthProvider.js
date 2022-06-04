@@ -1,12 +1,34 @@
-import React, {createContext} from 'react';
+import React, {createContext, useEffect} from 'react';
 
 import auth from '@react-native-firebase/auth';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import firestore from '@react-native-firebase/firestore';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
   const [user, setUser] = React.useState(null);
+
+  // useEffect(() => {
+  //   let unmounted = false;
+  //   setTimeout(() => {
+  //     if (!unmounted) {
+  //       firestore()
+  //         .collection('users')
+  //         .add({
+  //           name: name,
+  //           email: email,
+  //         })
+  //         .then(() => {
+  //           console.log('User added!');
+  //         });
+  //     }
+  //   }, 3000);
+  //   return () => {
+  //     unmounted = true;
+  //   };
+  // }, []);
+
   return (
     <AuthContext.Provider
       value={{
@@ -31,7 +53,9 @@ export const AuthProvider = ({children}) => {
         },
         register: async (name, email, password) => {
           try {
-            await auth().createUserWithEmailAndPassword(email, password);
+            await auth()
+              .createUserWithEmailAndPassword(email, password)
+              .then(() => {});
             console.log(`User created : ${name}`);
           } catch (error) {
             console.log(error);

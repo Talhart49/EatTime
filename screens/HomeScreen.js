@@ -1,6 +1,8 @@
 import {StyleSheet, Text, View, Button} from 'react-native';
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {AuthContext} from '../navigation/AuthProvider';
+
+import firestore from '@react-native-firebase/firestore';
 
 const HomeScreen = () => {
   const {user, logout} = useContext(AuthContext);

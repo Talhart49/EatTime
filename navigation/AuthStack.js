@@ -8,6 +8,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import LoginScreen from '../screens/LoginScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import SignupScreen from '../screens/SignupScreen';
+import SelectType from '../screens/SelectType';
 
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
@@ -38,7 +39,7 @@ const AuthStack = () => {
   } else if (isFirstLaunch === true) {
     routeName = 'Onboarding';
   } else {
-    routeName = 'Login';
+    routeName = 'Select';
   }
 
   return (
@@ -48,10 +49,24 @@ const AuthStack = () => {
         component={OnboardingScreen}
         options={{header: () => null}}
       />
+
+      <Stack.Screen
+        name="Select"
+        component={SelectType}
+        options={{header: () => null}}
+      />
+
       <Stack.Screen
         name="Login"
         component={LoginScreen}
-        options={{header: () => null}}
+        options={({navigation}) => ({
+          title: '',
+          headerStyle: {
+            backgroundColor: '#f9fafd',
+            shadowColor: '#f9fafd',
+            elevation: 0,
+          },
+        })}
       />
 
       <Stack.Screen
