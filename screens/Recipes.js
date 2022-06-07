@@ -12,28 +12,28 @@ const data = [
     date: 'Added 4 days ago',
   },
   {
-    imgs: require('../assets/food.jpg'),
+    imgs: require('../assets/recipe.jpg'),
     title: 'American Burger',
     description:
       'lorem ipsum dolor sit amet, consect lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lore ',
     date: 'Added 4 days ago',
   },
   {
-    imgs: require('../assets/food.jpg'),
+    imgs: require('../assets/recipe.jpg'),
     title: 'American Burger',
     description:
       'lorem ipsum dolor sit amet, consect lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lore ',
     date: 'Added 4 days ago',
   },
   {
-    imgs: require('../assets/food.jpg'),
+    imgs: require('../assets/recipe.jpg'),
     title: 'American Burger',
     description:
       'lorem ipsum dolor sit amet, consect lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lore ',
     date: 'Added 4 days ago',
   },
   {
-    imgs: require('../assets/food.jpg'),
+    imgs: require('../assets/recipe.jpg'),
     title: 'American Burger',
     description:
       'lorem ipsum dolor sit amet, consect lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lore ',
@@ -54,9 +54,9 @@ const Recipes = ({navigation}) => {
           <RecipeCard
             imgs={item.imgs}
             title={item.title}
-            rating={item.description}
-            price={item.date}
-            onPress={() => navigation.navigate('Details')}
+            description={item.description}
+            date={item.date}
+            onPress={() => navigation.navigate('Browse')}
           />
         )}
         horizontal={false}

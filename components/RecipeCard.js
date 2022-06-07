@@ -3,9 +3,9 @@ import React, {useState} from 'react';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default function RecipeCard({imgs, title, description, date}) {
+export default function RecipeCard({imgs, title, description, date, ...rest}) {
   return (
-    <View style={styles.recipe}>
+    <TouchableOpacity style={styles.recipe} {...rest}>
       <View style={styles.recipeImage}>
         <Image style={styles.image} source={imgs} />
       </View>
@@ -16,16 +16,16 @@ export default function RecipeCard({imgs, title, description, date}) {
         </View>
 
         <View style={styles.controls}>
-          <Text>{date}</Text>
+          <Text style={styles.date}>{date}</Text>
           <Icon
-            name="star-outline"
-            size={14}
-            color="orange"
+            name="heart-outline"
+            size={17}
+            color="red"
             style={{paddingRight: 5}}
           />
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -34,11 +34,9 @@ const styles = StyleSheet.create({
     width: 365,
     height: 160,
     flexDirection: 'row',
-    paddingHorizontal: 10,
-    paddingVertical: 7,
     margin: 17,
     borderRadius: 10,
-    marginTop: 15,
+    marginTop: 20,
     backgroundColor: '#FFFFFF',
 
     shadowColor: '#000',
@@ -84,8 +82,11 @@ const styles = StyleSheet.create({
   controls: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingTop: 7,
   },
-  control: {
-    padding: 10,
+  date: {
+    fontSize: 12,
+    color: '#2AC769',
   },
 });

@@ -14,6 +14,7 @@ import CartScreen from '../screens/CartScreen';
 import PaymentScreen from '../screens/PaymentScreen';
 import SupportScreen from '../screens/SupportScreen';
 import ShopScreen from '../screens/ShopScreen';
+import RecipesDestails from '../screens/RecipesDestails';
 
 const Drawer = createDrawerNavigator();
 
@@ -31,6 +32,11 @@ const AppStack = () => {
         <Drawer.Screen name="Payment" component={PaymentScreen} />
         <Drawer.Screen name="Support" component={SupportScreen} />
         <Drawer.Screen name="Shop" component={ShopScreen} />
+        <Drawer.Screen
+          name="Browse"
+          component={RecipesDestails}
+          options={{headerShown: false}}
+        />
       </Drawer.Navigator>
     </>
   );
