@@ -1,46 +1,41 @@
 import {StyleSheet, Text, View, FlatList} from 'react-native';
 import React from 'react';
 import {Searchbar} from 'react-native-paper';
-import RecipeCard from '../components/RecipeCard';
+import FoodCard from '../components/FoodCard';
 
 const data = [
   {
     imgs: require('../assets/food.jpg'),
     title: 'American Burger',
-    description:
-      'lorem ipsum dolor sit amet, consect lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lore ',
-    date: 'Added 4 days ago',
+    rating: '4.5',
+    price: 'RS. 1000',
   },
   {
     imgs: require('../assets/food.jpg'),
     title: 'American Burger',
-    description:
-      'lorem ipsum dolor sit amet, consect lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lore ',
-    date: 'Added 4 days ago',
+    rating: '4.5',
+    price: 'RS. 1000',
   },
   {
     imgs: require('../assets/food.jpg'),
     title: 'American Burger',
-    description:
-      'lorem ipsum dolor sit amet, consect lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lore ',
-    date: 'Added 4 days ago',
+    rating: '4.5',
+    price: 'RS. 1000',
   },
   {
     imgs: require('../assets/food.jpg'),
     title: 'American Burger',
-    description:
-      'lorem ipsum dolor sit amet, consect lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lore ',
-    date: 'Added 4 days ago',
+    rating: '4.5',
+    price: 'RS. 1000',
   },
   {
     imgs: require('../assets/food.jpg'),
     title: 'American Burger',
-    description:
-      'lorem ipsum dolor sit amet, consect lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lore ',
-    date: 'Added 4 days ago',
+    rating: '4.5',
+    price: 'RS. 1000',
   },
 ];
-const Recipes = ({navigation}) => {
+const ShopScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Searchbar
@@ -51,21 +46,21 @@ const Recipes = ({navigation}) => {
         nestedScrollEnabled
         data={Object.values(data)}
         renderItem={({item}) => (
-          <RecipeCard
+          <FoodCard
             imgs={item.imgs}
             title={item.title}
-            rating={item.description}
-            price={item.date}
+            rating={item.rating}
+            price={item.price}
             onPress={() => navigation.navigate('Details')}
           />
         )}
-        horizontal={false}
+        numColumns={2}
       />
     </View>
   );
 };
 
-export default Recipes;
+export default ShopScreen;
 
 const styles = StyleSheet.create({
   container: {

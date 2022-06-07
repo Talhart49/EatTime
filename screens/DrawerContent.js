@@ -1,12 +1,15 @@
 import {StyleSheet, View} from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import {Avatar, Title, Caption, Drawer} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
+import {AuthContext} from '../navigation/AuthProvider';
 
 const DrawerContent = props => {
+  const {logout} = useContext(AuthContext);
+
   return (
     <View style={{flex: 1}}>
       <DrawerContentScrollView {...props}>
@@ -21,6 +24,11 @@ const DrawerContent = props => {
             </View>
             <Drawer.Section style={styles.drawerSection}>
               <DrawerItem
+                labelStyle={{
+                  fontSize: 17,
+                  fontWeight: 'bold',
+                  marginLeft: -5,
+                }}
                 icon={({color, size}) => (
                   <Icon name="home-outline" color={color} size={size} />
                 )}
@@ -28,8 +36,15 @@ const DrawerContent = props => {
                 onPress={() => {
                   props.navigation.navigate('Home');
                 }}
+                activeTintColor="#e91e63"
+                activeBackgroundColor="red"
               />
               <DrawerItem
+                labelStyle={{
+                  fontSize: 17,
+                  fontWeight: 'bold',
+                  marginLeft: -5,
+                }}
                 icon={({color, size}) => (
                   <Icon name="basket-outline" color={color} size={size} />
                 )}
@@ -39,6 +54,11 @@ const DrawerContent = props => {
                 }}
               />
               <DrawerItem
+                labelStyle={{
+                  fontSize: 17,
+                  fontWeight: 'bold',
+                  marginLeft: -5,
+                }}
                 icon={({color, size}) => (
                   <Icon name="food-outline" color={color} size={size} />
                 )}
@@ -49,6 +69,11 @@ const DrawerContent = props => {
               />
 
               <DrawerItem
+                labelStyle={{
+                  fontSize: 17,
+                  fontWeight: 'bold',
+                  marginLeft: -5,
+                }}
                 icon={({color, size}) => (
                   <Icon name="cart-check" color={color} size={size} />
                 )}
@@ -59,6 +84,11 @@ const DrawerContent = props => {
               />
 
               <DrawerItem
+                labelStyle={{
+                  fontSize: 17,
+                  fontWeight: 'bold',
+                  marginLeft: -5,
+                }}
                 icon={({color, size}) => (
                   <AntDesign name="creditcard" color={color} size={size} />
                 )}
@@ -69,6 +99,11 @@ const DrawerContent = props => {
               />
 
               <DrawerItem
+                labelStyle={{
+                  fontSize: 17,
+                  fontWeight: 'bold',
+                  marginLeft: -5,
+                }}
                 icon={({color, size}) => (
                   <AntDesign name="setting" color={color} size={size} />
                 )}
@@ -79,6 +114,11 @@ const DrawerContent = props => {
               />
 
               <DrawerItem
+                labelStyle={{
+                  fontSize: 17,
+                  fontWeight: 'bold',
+                  marginLeft: -5,
+                }}
                 icon={({color, size}) => (
                   <Feather name="phone-call" color={color} size={size} />
                 )}
@@ -88,12 +128,17 @@ const DrawerContent = props => {
                 }}
               />
               <DrawerItem
+                labelStyle={{
+                  fontSize: 17,
+                  fontWeight: 'bold',
+                  marginLeft: -5,
+                }}
                 icon={({color, size}) => (
                   <AntDesign name="logout" color={color} size={size} />
                 )}
                 label="Logout"
                 onPress={() => {
-                  props.navigation.navigate('Settings');
+                  logout();
                 }}
               />
             </Drawer.Section>

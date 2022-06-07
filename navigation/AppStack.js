@@ -13,6 +13,7 @@ import DrawerContent from '../screens/DrawerContent';
 import CartScreen from '../screens/CartScreen';
 import PaymentScreen from '../screens/PaymentScreen';
 import SupportScreen from '../screens/SupportScreen';
+import ShopScreen from '../screens/ShopScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -20,12 +21,16 @@ const AppStack = () => {
   return (
     <>
       <Drawer.Navigator
-        screenOptions={{headerTitleAlign: 'center'}}
+        screenOptions={{
+          headerTitleAlign: 'center',
+          drawerActiveBackgroundColor: 'blue',
+        }}
         drawerContent={props => <DrawerContent {...props} />}>
         <Drawer.Screen name=" " component={MainTabScreen} />
         <Drawer.Screen name="Cart" component={CartScreen} />
         <Drawer.Screen name="Payment" component={PaymentScreen} />
         <Drawer.Screen name="Support" component={SupportScreen} />
+        <Drawer.Screen name="Shop" component={ShopScreen} />
       </Drawer.Navigator>
     </>
   );
