@@ -13,33 +13,33 @@ const OnboardingScreen = ({navigation}) => {
           image: (
             <Image
               style={styles.img}
-              source={require('../assets/cucumber-sandwich.jpg')}
+              source={require('../assets/eating.webp')}
             />
           ),
-          title: 'Onboarding',
-          subtitle: 'Done with React Native Onboarding Swiper1',
+          title: 'Delieveries',
+          subtitle: 'Want to Eat Some Mouth Watering Food?',
         },
         {
           backgroundColor: '#fdeb93',
           image: (
             <Image
               style={styles.img}
-              source={require('../assets/cucumber-sandwich.jpg')}
+              source={require('../assets/cooking.png')}
             />
           ),
-          title: 'Onboarding',
-          subtitle: 'Done with React Native Onboarding Swiper2',
+          title: 'Recipes',
+          subtitle: 'Want to Cook Some Delicious Food?',
         },
         {
           backgroundColor: '#e9bcbe',
           image: (
             <Image
               style={styles.img}
-              source={require('../assets/cucumber-sandwich.jpg')}
+              source={require('../assets/welcome.png')}
             />
           ),
-          title: 'Onboarding',
-          subtitle: 'Done with React Native Onboarding Swiper3',
+          title: 'Welcome',
+          subtitle: "Let's Start Your Journey",
         },
       ]}
     />
@@ -57,5 +57,6 @@ const styles = StyleSheet.create({
   img: {
     height: 200,
     width: 200,
+    resizeMode: 'contain',
   },
 });

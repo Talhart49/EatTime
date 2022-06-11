@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   View,
   ScrollView,
+  Image,
 } from 'react-native';
 import React from 'react';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
@@ -18,27 +19,31 @@ const data = [
     id: 2,
     carnNumber: '**** **** **** 8842',
   },
+
+  {
+    id: 3,
+    carnNumber: '**** **** **** 8843',
+  },
+  {
+    id: 3,
+    carnNumber: '**** **** **** 8843',
+  },
   {
     id: 3,
     carnNumber: '**** **** **** 8843',
   },
 ];
 
-const PaymentScreen = ({navigation}) => {
+const SelectPayment = ({navigation}) => {
   return (
     <ScrollView style={styles.Maincontainer}>
       {data.map(item => (
         <TouchableOpacity style={styles.container}>
+          <Image
+            source={require('../assets/mastercard.png')}
+            style={styles.cardImg}
+          />
           <Text style={styles.text}>{item.carnNumber}</Text>
-          <View style={styles.icon}>
-            <SimpleLineIcons name="pencil" size={19} color="#5076ED" />
-            <AntDesign
-              name="delete"
-              size={19}
-              color="#FB4E4E"
-              style={{marginHorizontal: 14}}
-            />
-          </View>
         </TouchableOpacity>
       ))}
       <View>
@@ -51,21 +56,24 @@ const PaymentScreen = ({navigation}) => {
           <Text style={styles.addCardText}>Add a new Card</Text>
         </TouchableOpacity>
       </View>
+      <TouchableOpacity style={styles.btn}>
+        <Text style={styles.txt}>Place Order</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
 
-export default PaymentScreen;
+export default SelectPayment;
 
 const styles = StyleSheet.create({
   Maincontainer: {
     flex: 1,
     backgroundColor: '#F5F5F5',
     paddingTop: 37,
+    width: '100%',
   },
   container: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
     padding: 15,
     backgroundColor: '#fff',
@@ -101,5 +109,24 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 10,
     borderRadius: 50,
+  },
+  btn: {
+    backgroundColor: '#007EFF',
+    padding: 15,
+    marginVertical: 40,
+    marginHorizontal: 20,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  txt: {
+    fontSize: 17,
+    fontWeight: '500',
+    color: '#fff',
+  },
+  cardImg: {
+    width: 30,
+    height: 30,
+    resizeMode: 'contain',
   },
 });

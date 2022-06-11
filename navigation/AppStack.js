@@ -18,6 +18,8 @@ import RecipesDestails from '../screens/RecipesDestails';
 import LoginScreen from '../screens/LoginScreen';
 import PasswordScreen from '../screens/PasswordScreen';
 import PersonalinfoScreen from '../screens/PersonalinfoScreen';
+import AddCardScreen from '../screens/AddCardScreen';
+import SelectPayment from '../screens/SelectPayment';
 
 const Drawer = createDrawerNavigator();
 
@@ -61,6 +63,20 @@ const AppStack = () => {
           component={PersonalinfoScreen}
           options={{
             title: 'Edit Profile',
+          }}
+        />
+        <Drawer.Screen
+          name="NewCard"
+          component={AddCardScreen}
+          options={{
+            title: 'Add New Card',
+          }}
+        />
+        <Drawer.Screen
+          name="SelectPayment"
+          component={SelectPayment}
+          options={{
+            title: 'Select Payment Option',
           }}
         />
       </Drawer.Navigator>
