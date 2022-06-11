@@ -55,8 +55,8 @@ function MainTabScreen() {
         component={Settings}
         options={{
           tabBarLabel: 'Settings',
+          headerShown: false,
           tabBarIcon: ({color}) => (
-              
             <Icon name="settings-outline" color={color} size={24} />
           ),
         }}

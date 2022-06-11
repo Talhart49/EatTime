@@ -15,6 +15,9 @@ import PaymentScreen from '../screens/PaymentScreen';
 import SupportScreen from '../screens/SupportScreen';
 import ShopScreen from '../screens/ShopScreen';
 import RecipesDestails from '../screens/RecipesDestails';
+import LoginScreen from '../screens/LoginScreen';
+import PasswordScreen from '../screens/PasswordScreen';
+import PersonalinfoScreen from '../screens/PersonalinfoScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -29,13 +32,36 @@ const AppStack = () => {
         drawerContent={props => <DrawerContent {...props} />}>
         <Drawer.Screen name=" " component={MainTabScreen} />
         <Drawer.Screen name="Cart" component={CartScreen} />
-        <Drawer.Screen name="Payment" component={PaymentScreen} />
+        <Drawer.Screen
+          name="Payment"
+          component={PaymentScreen}
+          options={{
+            title: 'Manage Payments',
+          }}
+        />
         <Drawer.Screen name="Support" component={SupportScreen} />
         <Drawer.Screen name="Shop" component={ShopScreen} />
+
         <Drawer.Screen
           name="Browse"
           component={RecipesDestails}
           options={{headerShown: false}}
+        />
+
+        <Drawer.Screen
+          name="Password"
+          component={PasswordScreen}
+          options={{
+            title: 'Change Password',
+          }}
+        />
+
+        <Drawer.Screen
+          name="Info"
+          component={PersonalinfoScreen}
+          options={{
+            title: 'Edit Profile',
+          }}
         />
       </Drawer.Navigator>
     </>

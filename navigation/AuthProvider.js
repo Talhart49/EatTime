@@ -38,7 +38,7 @@ export const AuthProvider = ({children}) => {
           try {
             await auth().signInWithEmailAndPassword(email, password);
           } catch (error) {
-            console.log(error);
+            alert(error.message);
           }
         },
         googleLogin: async () => {
