@@ -50,6 +50,9 @@ allprojects {
             }
         }
         google()
-        maven { url 'https://www.jitpack.io' }
+
+        // Custom added for image picker
+      maven { url 'https://maven.google.com' }
+      maven { url "https://www.jitpack.io" }
     }
 }

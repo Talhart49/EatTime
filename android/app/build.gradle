@@ -1,5 +1,8 @@
 apply plugin: "com.android.application"
 
+apply plugin: 'com.google.gms.google-services'
+
+
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
 
@@ -146,6 +149,9 @@ android {
         versionName "1.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
+        // Added manually for image picker
+        vectorDrawables.useSupportLibrary = true
+
         if (isNewArchitectureEnabled()) {
             // We configure the NDK build only if you decide to opt-in for the New Architecture.
             externalNativeBuild {
@@ -266,6 +272,9 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
+    // Manually added
+    implementation platform('com.google.firebase:firebase-bom:30.1.0')
+
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
@@ -322,4 +331,3 @@ def isNewArchitectureEnabled() {
     return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
 }
 
-apply plugin: 'com.google.gms.google-services'
